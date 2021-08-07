@@ -38,8 +38,4 @@ for height_num in height_arr:
 
 height_length.append(height_cnt)
             
-print(max(height_length)*max(width_length))    
-
-
-        
-    
+print(max(height_length)*max(width_length))
