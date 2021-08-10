@@ -29,6 +29,7 @@
 <br>
 [gaa0](https://github.com/gaa0), [Shinho Jung](https://github.com/shinhojung814)
 <br>
+
 :point_right: **진행방식**
 <br> 
 1주차에서는 다음 주차들을 위한 기초를 다지는 시간이라고 생각하여 서적과 인터넷 서칭을 통해 각자 기초를 공부하고 주어진 문제를 풀었습니다.<br>
