@@ -70,14 +70,6 @@ for order_num in order_nums:
             flag = True
             break
         cost += arr[from_v][to_v]
-        '''
-        if arr[order_num[idx]][order_num[(idx + 1)]] != 0:
-            cost += arr[order_num[idx]][order_num[(idx + 1)]]
-        
-        else:
-            check = True
-            break
-        '''
         if final_cost <= cost:
             check = True
             break
