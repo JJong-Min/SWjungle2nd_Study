@@ -1,37 +1,41 @@
-import itertools
 import sys
-input = sys.stdin.readline
+from itertools import permutations
+
 def main():
-    n = int(input())
-    costs = [[0]*n for _ in range(n)]
-    for y in range(n):
-        s = list(map(int, input().split()))
-        for i in range(n):
-            costs[y][i] = s[i]
+    N = int(sys.stdin.readline())
+    arr = []
 
-    perms = itertools.permutations(range(n))
-    ret = sys.maxsize
-    for perm in perms:
-        if costs[perm[-1]][perm[0]] == 0:
+    for _ in range(N):
+        arr.append(list(map(int, sys.stdin.readline().split())))
+
+
+    order_nums = permutations(range(N))
+    final_cost = 1000000 * N
+
+    for order_num in order_nums:
+        if arr[order_num[-1]][order_num[0]] == 0:
             continue
+        check = False
         cost = 0
-        flag = True
-        for i in range(n-1):
-            from_v = perm[i]
-            to_v = perm[i+1]
-            if costs[from_v][to_v] == 0:
-                flag = False
-                break
-            cost += costs[from_v][to_v]
-            if cost >= ret:
-                flag = False
-                break
-        if flag == False:
-            continue
-        cost += costs[perm[-1]][perm[0]]
-        ret = min(ret, cost)
 
-    print(ret)
+        for idx in range(len(order_num) - 1):
+            if arr[order_num[idx]][order_num[idx + 1]] == 0:
+                check = True
+                break
+
+            cost += arr[order_num[idx]][order_num[idx + 1]]
+
+            if cost >= final_cost:
+                check = True
+                break
+
+        if check:
+            continue
+
+        cost += arr[order_num[-1]][order_num[0]]
+        final_cost = min(final_cost, cost)
+
+    print(final_cost)
 
 main()
 
@@ -60,16 +64,24 @@ for order_num in order_nums:
     check = False
         
     for idx in range(N - 1):
-        if final_cost <= cost:
-            check = True
+        from_v = order_num[idx]
+        to_v = order_num[idx+1]
+        if arr[from_v][to_v] == 0:
+            flag = True
             break
-        
+        cost += arr[from_v][to_v]
+        '''
         if arr[order_num[idx]][order_num[(idx + 1)]] != 0:
             cost += arr[order_num[idx]][order_num[(idx + 1)]]
         
         else:
             check = True
             break
+        '''
+        if final_cost <= cost:
+            check = True
+            break
+        
     if check:
         continue
         
