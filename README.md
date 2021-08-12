@@ -49,21 +49,36 @@
 > 타인의 개인정보(사진, 이름 등)는 모자이크 처리했습니다.<br>
 > [Week01]Alogorithm1폴더에 commit & push한 파일들이 문제 풀이 코드와 알고리즘을 공부하며 실습한 코드입니다.
 
-:point_right: **모의고사 진행(2021.08.12 10:00 ~ 11:30)**
+:point_right: **모의고사 진행(2021.08.12 10:00 ~ 11:30)**<br>
 1 주차가 마무리되고 주차별 주제에서 3문제(난이도 상/중/하)를 모의고사 형식으로 진행했습니다.<br>
 시간이 완료되면 풀이 코드를 공용 레퍼지토리에 PR을 보내어 정해진 제출자의 코드를 리뷰를 해주고 리뷰어에게 저의 코드를 리뷰를 받는 형식으로 진행됐습니다.<br>
 <br>
 
-:camera: **리뷰어[lievinkim](https://github.com/lievinkim)에게 받은 리뷰**
+:camera: **리뷰어 [lievinkim](https://github.com/lievinkim)에게 받은 리뷰**
 <br>
 <img src="https://user-images.githubusercontent.com/79436533/129144126-c5ea5a99-1a59-4743-b49d-ffbab015f643.PNG"  width="800" height="600">
 <br>
 <br>
 
-:camera: **제출자[KsPsD](https://github.com/KsPsD)에게 받은 리뷰**
+:camera: **제출자 [KsPsD](https://github.com/KsPsD)에게 받은 리뷰**
 <img src="https://user-images.githubusercontent.com/79436533/129144000-0a17060f-cd1f-4584-be0c-57cf76208992.PNG"  width="800" height="600">
 <br>
 <br>
+<br>
+
+#### :three: **WEEK02 (2021.08.12 ~ 2021.08.18)**
+:point_right: **주제**
+<br>
+이분탐색, 분할정복, 스택, 큐, 우선순위 큐
+<br>
+
+:point_right: **팀원**
+<br>
+[AnSolomon](https://github.com/AnSolomon), [ariaskkh](https://github.com/ariaskkh)
+<br>
+
+:point_right: **진행방식**
+<br> 
 <hr/>
 
 ## :eyes: 요일별 내가 하루동안 배운 정리글
