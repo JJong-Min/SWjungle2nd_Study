@@ -11,6 +11,13 @@
 0주차는 입학시험 때 배운 기술들을 토대로 3박 4일(2021.08.02 ~ 2021.08.05)간 미니 프로젝트를 팀 단위로 진행했습니다.<br>
 자세한 내용은 [swjungle2nd_week00](https://github.com/JJong-Min/swjungle2nd_week00)을 확인해주세요
 <br>
+
+- WEEK01 : 알고리즘 기초(기초, 배열, 문자열, 재귀함수), 정렬, 완전탐색, 시간복잡도
+- WEEK02 : 이분탐색, 분할정복, 스택, 큐, 우선순위 큐
+- WEEK03 : 그래프 탐색 기본, BFS, DFS, DFS(위상정렬)
+- WEEK04 : 동적 프로그래밍, 그리디 알고리즘
+
+<br>
 <br>
 
 ### :bell: 1주차 ~ 4주차 (컴퓨팅사고로의 전환)
@@ -42,19 +49,30 @@
 > 타인의 개인정보(사진, 이름 등)는 모자이크 처리했습니다.<br>
 > [Week01]Alogorithm1폴더에 commit & push한 파일들이 문제 풀이 코드와 알고리즘을 공부하며 실습한 코드입니다.
 
-- WEEK01 : 알고리즘 기초(기초, 배열, 문자열, 재귀함수), 정렬, 완전탐색, 시간복잡도
-- WEEK02 : 이분탐색, 분할정복, 스택, 큐, 우선순위 큐
-- WEEK03 : 그래프 탐색 기본, BFS, DFS, DFS(위상정렬)
-- WEEK04 : 동적 프로그래밍, 그리디 알고리즘
+:point_right: **모의고사 진행(2021.08.12 10:00 ~ 11:30)**
+1 주차가 마무리되고 주차별 주제에서 3문제(난이도 상/중/하)를 모의고사 형식으로 진행했습니다.<br>
+시간이 완료되면 풀이 코드를 공용 레퍼지토리에 PR을 보내어 정해진 제출자의 코드를 리뷰를 해주고 리뷰어에게 저의 코드를 리뷰를 받는 형식으로 진행됐습니다.<br>
+<br>
+
+:camera: **리뷰어[lievinkim](https://github.com/lievinkim)에게 받은 리뷰**
+<br>
+<img src="https://user-images.githubusercontent.com/79436533/129144126-c5ea5a99-1a59-4743-b49d-ffbab015f643.PNG"  width="800" height="600">
+<br>
+<br>
+
+:camera: **제출자[KsPsD](https://github.com/KsPsD)에게 받은 리뷰**
+<img src="https://user-images.githubusercontent.com/79436533/129144000-0a17060f-cd1f-4584-be0c-57cf76208992.PNG"  width="800" height="600">
 <br>
 <br>
 <hr/>
 
 ## :eyes: 요일별 내가 하루동안 배운 정리글
-* [2021년 08월 02일 1일차](https://straw961030.tistory.com/178)
-* [2021년 08월 04일 3일차](https://straw961030.tistory.com/179)
-* [2021년 08월 05일 4일차](https://straw961030.tistory.com/180)
-* [2021년 08월 06일 5일차](https://straw961030.tistory.com/181)
-* [2021년 08월 07일 6일차](https://straw961030.tistory.com/182)
-* [2021년 08월 08일 7일차](https://straw961030.tistory.com/183)
-* [2021년 08월 09일 8일차](https://straw961030.tistory.com/184)
+* [2021년 08월 02일  1일차](https://straw961030.tistory.com/178)
+* [2021년 08월 04일  3일차](https://straw961030.tistory.com/179)
+* [2021년 08월 05일  4일차](https://straw961030.tistory.com/180)
+* [2021년 08월 06일  5일차](https://straw961030.tistory.com/181)
+* [2021년 08월 07일  6일차](https://straw961030.tistory.com/182)
+* [2021년 08월 08일  7일차](https://straw961030.tistory.com/183)
+* [2021년 08월 09일  8일차](https://straw961030.tistory.com/184)
+* [2021년 08월 10일  9일차](https://straw961030.tistory.com/186)
+* [2021년 08월 11일 10일차](https://straw961030.tistory.com/188)
