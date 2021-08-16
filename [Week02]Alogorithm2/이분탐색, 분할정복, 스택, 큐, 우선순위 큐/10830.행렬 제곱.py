@@ -14,7 +14,7 @@ def squared_matrix(matrix, n, b):
     if b == 1:
         return matrix
     
-    if b == 2:
+    elif b == 2:
         return new_matrix(matrix, matrix, n)
 
 
@@ -29,6 +29,8 @@ def squared_matrix(matrix, n, b):
 N, B = map(int, sys.stdin.readline().split())
 matrix = [list(map(int, sys.stdin.readline().split())) for _ in range(N)]
 
-for i in range(N):
-    print(*squared_matrix(matrix, N, B)[i])
-    
+result = squared_matrix(matrix, N, B)
+for row in result:
+    for num in row:
+        print(num%1000, end = ' ')
+    print()
