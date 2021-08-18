@@ -36,3 +36,37 @@ for people_location in people_locations:
     answer = max(answer, len(heap))
 
 print(answer)
+
+
+# 왼쪽을 기준으로 철로 세워보기
+import sys
+import heapq
+
+n = int(sys.stdin.readline())
+
+positions = []
+for i in range(n):
+    person = list(map(int, sys.stdin.readline().split()))
+    person.sort()
+    positions.append(person)
+positions.sort(reverse=True)
+
+d = int(sys.stdin.readline())
+positions = [[h, o] for h, o in positions if abs(h - o) <= d]
+
+heap = []
+ans = 0
+
+for position in positions:
+    if not heap:
+        heapq.heappush(heap, -position[1])
+
+    else:
+        while heap and -heap[0] > position[0] + d:
+            heapq.heappop(heap)
+
+        heapq.heappush(heap, -position[1])
+
+    ans = max(ans, len(heap))
+
+print(ans)
