@@ -41,7 +41,7 @@ for gwalho in gwalhos:
 
     else:
         stack.append(gwalho)
-    print(stack)
+
 for i in stack:
     if i =='(' or i == '[':
         print(0)
