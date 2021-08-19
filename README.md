@@ -49,9 +49,10 @@
 > 타인의 개인정보(사진, 이름 등)는 모자이크 처리했습니다.<br>
 > [Week01]Alogorithm1폴더에 commit & push한 파일들이 문제 풀이 코드와 알고리즘을 공부하며 실습한 코드입니다.
 
-:point_right: **모의고사 진행(2021.08.12 10:00 ~ 11:30)**<br>
+:point_right: **1주차 모의고사 진행(2021.08.12 10:00 ~ 11:30)**<br>
 1 주차가 마무리되고 주차별 주제에서 3문제(난이도 상/중/하)를 모의고사 형식으로 진행했습니다.<br>
-시간이 완료되면 풀이 코드를 공용 레퍼지토리에 PR을 보내어 정해진 제출자의 코드를 리뷰를 해주고 리뷰어에게 저의 코드를 리뷰를 받는 형식으로 진행됐습니다.<br>
+시간이 완료되면 풀이 코드를 공용 레퍼지토리에 PR을 보내어 정해진 제출자의 코드를 리뷰를 해주고 리뷰어에게 저의 코드를 리뷰를 받는 형식으로 진행됐습니다.
+<br>
 <br>
 <br>
 
@@ -61,7 +62,7 @@
 <br>
 <br>
 
-:camera: **제출자 [KsPsD](https://github.com/KsPsD)에게 받은 리뷰**
+:camera: **제출자 [KsPsD](https://github.com/KsPsD)에게 해준 리뷰**
 <img src="https://user-images.githubusercontent.com/79436533/129144000-0a17060f-cd1f-4584-be0c-57cf76208992.PNG"  width="800" height="600">
 <br>
 <br>
@@ -88,6 +89,43 @@
 그리고 팀원 한 명이 집을 간다고 하면 가기 전에 모여서 오늘의 진행상황을 공유하고 궁금했던 것이나 공유하고 싶은 것들을 얘기하는 시간을 가지면서 하나의 팀으로서 활동을 합니다.
 <br>
 
+:point_right: **2주차 모의고사 진행(2021.08.19 10:00 ~ 11:30)**<br>
+2 주차가 마무리되고 주차별 주제에서 3문제(난이도 상/중/하)를 모의고사 형식으로 진행했습니다.<br>
+시간이 완료되면 풀이 코드를 공용 레퍼지토리에 PR을 보내어 정해진 제출자의 코드를 리뷰를 해주고 리뷰어에게 저의 코드를 리뷰를 받는 형식으로 진행됐습니다.
+<br>
+<br>
+<br>
+
+:camera: **리뷰어 [KsPsD](https://github.com/KsPsD)에게 받은 리뷰**
+<br>
+<img src="(https://user-images.githubusercontent.com/79436533/130022429-77d0cb32-8b65-4861-9d29-a9116f767531.PNG"  width="800" height="600">
+<br>
+<br>
+
+:camera: **제출자 [lievinkim](https://github.com/lievinkim)에게 해준 리뷰**
+<img src="https://user-images.githubusercontent.com/79436533/130028453-2ad90275-5744-4fbc-9a06-0ee88f078617.PNG"  width="800" height="600">
+<br>
+<br>
+<br>
+
+#### :three: **WEEK03 (2021.08.19 ~ 2021.08.25)**
+:point_right: **주제**
+<br>
+그래프 탐색 기본, BFS, DFS, DFS(위상정렬)
+<br>
+<br>
+
+:point_right: **팀원**
+<br>
+[RaeSeong](https://github.com/RaeSeong), [nono9633](https://github.com/nono9633)
+<br>
+<br>
+
+:point_right: **진행방식**
+<br>
+3주차는 주어진 문제 수가 적고 중요한 알고리즘이라는 의견이 있어 정해놓은 섹터별로 공부와 문제를 풀고 정해진 시간에 모여 의견을 나누었습니다.<br>
+BFS, DFS 기본 문제 풀기, BFS 개념 공부와 BFS 난이도 높은 문제 풀기, DFS 개념 공부와 DFS 난이도 높은 문제 풀기, DFS(위상정렬) 개념 공부와 DFS(위상정렬) 난이도 높은 문제 풀기 4개로 나누었습니다. <br>
+매일 정해놓은 시간 외에도 의견을 공유하는 시간이 필요하면 요청하여 자리를 가져 의견을 나누었습니다.<br>
 
 <hr/>
 
@@ -101,3 +139,10 @@
 * [2021년 08월 09일  8일차](https://straw961030.tistory.com/184)
 * [2021년 08월 10일  9일차](https://straw961030.tistory.com/186)
 * [2021년 08월 11일 10일차](https://straw961030.tistory.com/188)
+* [2021년 08월 12일 11일차](https://straw961030.tistory.com/188)
+* [2021년 08월 13일 12일차](https://straw961030.tistory.com/190)
+* [2021년 08월 14일 13일차](https://straw961030.tistory.com/192)
+* [2021년 08월 15일 14일차](https://straw961030.tistory.com/193)
+* [2021년 08월 16일 15일차](https://straw961030.tistory.com/194)
+* [2021년 08월 17일 16일차](https://straw961030.tistory.com/195)
+* [2021년 08월 18일 17일차](https://straw961030.tistory.com/196)
