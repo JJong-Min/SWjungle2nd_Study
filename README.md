@@ -89,7 +89,7 @@
 각자 공부하면서 참고할만한 좋은 자료를 얻었다면 슬랙채널에 올려 지식을 공유합니다.<br>
 그리고 팀원 한 명이 집을 간다고 하면 가기 전에 모여서 오늘의 진행상황을 공유하고 궁금했던 것이나 공유하고 싶은 것들을 얘기하는 시간을 가지면서 하나의 팀으로서 활동을 합니다.
 <br>
-<img src="https://user-images.githubusercontent.com/79436533/130031123-f11c8262-8be5-45a8-90c1-b3829c43809d.PNG"  width="800" height="600">
+<img src="https://user-images.githubusercontent.com/79436533/130031475-796589d8-faf6-4fbb-9929-0249edfca88e.PNG"  width="800" height="600">
 <br>
 
 > 타인의 개인정보(사진, 이름 등)는 모자이크 처리했습니다.<br>
