@@ -19,3 +19,5 @@ for _ in range(T):
     cnt = 0
     recursive_func(n)
     print(cnt)
+
+
