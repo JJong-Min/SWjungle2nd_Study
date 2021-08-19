@@ -98,7 +98,7 @@
 
 :camera: **리뷰어 [KsPsD](https://github.com/KsPsD)에게 받은 리뷰**
 <br>
-<img src="(https://user-images.githubusercontent.com/79436533/130022429-77d0cb32-8b65-4861-9d29-a9116f767531.PNG"  width="800" height="600">
+<img src="https://user-images.githubusercontent.com/79436533/130022429-77d0cb32-8b65-4861-9d29-a9116f767531.PNG"  width="800" height="600">
 <br>
 <br>
 
@@ -129,7 +129,7 @@ BFS, DFS 기본 문제 풀기, BFS 개념 공부와 BFS 난이도 높은 문제 
 
 <hr/>
 
-## :eyes: 요일별 내가 하루동안 배운 정리글
+## :eyes: 내가 하루동안 배우고 느낀 정리글
 * [2021년 08월 02일  1일차](https://straw961030.tistory.com/178)
 * [2021년 08월 04일  3일차](https://straw961030.tistory.com/179)
 * [2021년 08월 05일  4일차](https://straw961030.tistory.com/180)
