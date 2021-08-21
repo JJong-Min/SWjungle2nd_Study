@@ -83,8 +83,7 @@ def dfs(x, y, cnt):
             done[G[ny][nx]] = 1
             dfs(nx, ny, cnt + 1)
             done[G[ny][nx]] = 0
-​
-​
+
 R, C = map(int, sys.stdin.readline().split())
 G = [list(map(lambda x: ord(x) - 65, input())) for _ in range(R)]
 done = [0] * 26
