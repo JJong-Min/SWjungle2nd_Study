@@ -1,35 +1,28 @@
-
-
-# 27퍼 틀림
 import sys
+from collections import deque
 
 n, k = map(int, sys.stdin.readline().split())
-plugs = list(map(int, sys.stdin.readline().split()))
+elec_products = list(map(int, sys.stdin.readline().split()))
+now_multitap = set(elec_products[:n])
+queue = deque(elec_products[n:])
+cnt = 0
 
-now_plugin = set(plugs[:n])
-left_plug = n - len(now_plugin)
-cnt  = 0
-for i in range(n, k, n):
-    # 새롭게 들어갈 제품들
-    new_plugin = set(plugs[i: i + n])
-    # 꽃인 것 중 나와야할 것들
-    out_plug = now_plugin - new_plugin
-    # 들어가야한 것들
-    in_plug = new_plugin - now_plugin
-
-    if len(out_plug) == 0 or len(in_plug) == 0:
+while queue:
+    product = queue.popleft()
+    if product in now_multitap or len(now_multitap) < n:
+        now_multitap.add(product)
         continue
+
+    delete_candidate = []
+    for plugin_product in now_multitap:
+        if plugin_product not in queue:
+            now_multitap.remove(plugin_product)
+            break
+        delete_candidate.append(queue.index(plugin_product))
     else:
-        now_plugin = new_plugin
-        if len(out_plug) > len(in_plug):
-            cnt += len(in_plug) - left_plug
-        else:
-            cnt += len(out_plug) - left_plug
-        left_plug = n - len(now_plugin)
+        now_multitap.remove(queue[max(delete_candidate)])
+    now_multitap.add(product)
+    cnt += 1
 
 print(cnt)
             
-    
-
-    
-    
