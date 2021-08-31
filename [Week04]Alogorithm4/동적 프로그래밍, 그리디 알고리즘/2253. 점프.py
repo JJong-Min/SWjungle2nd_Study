@@ -1,4 +1,28 @@
-# 
+# dp
+import sys
+
+n, m = map(int, sys.stdin.readline().split())
+small_stone = set()
+
+for _ in range(m):
+    small_stone.add(int(sys.stdin.readline()))
+
+max_speed = int(((n * 2) ** 0.5)) + 1
+dp = [[float('inf')] * (max_speed + 1) for _ in range(n + 1)]
+dp[2][1] = 1
+
+# bottom-up
+# 2번 돌까지는 결과를 이미 아므로 3번 돌부터 진행
+for i in range(3, n + 1):
+    if i in small_stone:
+        continue
+    for j in range(1, max_speed):
+        dp[i][j] = min(dp[i - j][j - 1], dp[i - j][j], dp[i - j][j + 1]) + 1
+
+if min(dp[n]) == float('inf'):
+    print(-1)
+else:
+    print(min(dp[n]))
 
 
 # 통과 bfs
