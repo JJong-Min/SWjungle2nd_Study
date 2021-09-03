@@ -2,6 +2,9 @@
 
 ## :eyes: 참고 서적
 1. Do it! 자료구조와 함께 배우는 알고리즘 입문: 파이썬 편 (시바타 보요 지음 | 이지스퍼블리싱 | 2020년07월)
+2. 컴퓨터 시스템 3판 (Randal E. Bryan , David R. O'Hallaron 지음 | 피어슨에듀케이션코리아 | 2016년08월)
+3. Introduction to Algorithms, 3rd Edition (Thomas H .Cormen 지음 | 한빛아카데미 | 2014년06월)
+4. Data Structures & Algorithms in Python(Michael T. Goodrich 지음 | WILEY | 2013년02월)
 
 <br/>
 <hr/>
@@ -193,11 +196,30 @@ BFS, DFS 기본 문제 풀기, BFS 개념 공부와 BFS 난이도 높은 문제 
 <br>
 <br>
 
-### :bell: 5주차 (정글 입성)
-5주차는 기계와 조금 더 가까운 low-level 언어인 C언어를 공부하고 C언어의 포인터 개념과 gdb 디버거를 활용하여 고급 자료구조인 RB Tree를 직접 구현했습니다.<br>
-개별로 진행한 것이 아닌 2명의 팀원([ICIS80](https://github.com/ICIS80), [livinkim](https://github.com/livinkim))과 함께 팀별로 진행했습니다.<br>
+### :bell: 5주차 (탐험 준비)
+<br>
+<br>
+
+#### :one: **WEEK05 (2021.09.02 ~ 2021.09.08)**
+
+:point_right: **주제**
+<br>
+Red-Black Tree 구현하기
+<br>
+<br>
+
+:point_right: **팀원**
+<br>
+[ICIS80](https://github.com/ICIS80), [livinkim](https://github.com/livinkim)
+<br>
+<br>
+
+:point_right: **진행방식**
+<br> 
+15주차 부터는 기계와 조금 더 가까운 low-level 언어인 C언어를 공부하고 C언어의 포인터 개념과 gdb 디버거를 활용하여 고급 자료구조인 RB Tree를 직접 구현했습니다.<br>
+개별로 진행한 것이 아닌 2명의 팀원과 함께 팀별로 진행했습니다.<br>
 각자 RB Tree 구현을 위한 코드를 짜는 과정에서 새로 배운 C언어 개념, RB Tree에 대한 지식, 리눅스 환경 등을 토의하며 진행했고 구현 시에 어려운 점을 서로 공유하며 같이 해결해나갔습니다.<br>
-자세한 내용은 [rbtree_lab](https://github.com/JJong-Min/rbtree_lab)을 확인해주세요
+자세한 내용은 [rbtree_lab](https://github.com/JJong-Min/rbtree_lab)을 확인해주세요.<br>
 
 <hr/>
 
