@@ -197,10 +197,15 @@ BFS, DFS 기본 문제 풀기, BFS 개념 공부와 BFS 난이도 높은 문제 
 <br>
 
 ### :bell: 5주차 (탐험 준비)
+#### :one: **전체 진행 방식**
+:point_right: 매주 팀원들(2~3명이 한 팀)이 바뀌며 python이 아닌 C언어를 사용하여 고급 자료구조 및 웹 서버를 직접 구현합니다.
 <br>
+- WEEK05 : Red=Black Tree 구현
+= WEEK06 : Malloc 구현
+- WEEK07 : Web Server 구현
 <br>
 
-#### :one: **WEEK05 (2021.09.02 ~ 2021.09.08)**
+#### :two: **WEEK05 (2021.09.02 ~ 2021.09.08)**
 
 :point_right: **주제**
 <br>
