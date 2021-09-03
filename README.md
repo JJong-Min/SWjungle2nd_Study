@@ -142,7 +142,7 @@ BFS, DFS 기본 문제 풀기, BFS 개념 공부와 BFS 난이도 높은 문제 
 <br>
 <br>
 
-:camera: **리뷰어 [KsPsD](https://github.com/KsPsD)에게 받은 리뷰**
+:camera: **리뷰어 [SEO7715](https://github.com/SEO7715)에게 받은 리뷰**
 <br>
 <img src="https://user-images.githubusercontent.com/79436533/130944593-4bcb123f-ff36-444f-bc0d-b9ef17437008.PNG"  width="800" height="600">
 <br>
@@ -171,8 +171,27 @@ BFS, DFS 기본 문제 풀기, BFS 개념 공부와 BFS 난이도 높은 문제 
 <br>
 4주차는 동적프로그래밍과 그리디 알고리즘 2개 파트여서 토요일까지는 동적프로그래밍, 화요일까지는 그리디 알고리즘을 공부하기로 정해서 진행했습니다.<br>
 매일 저녁 8 ~ 9시에 리뷰타임을 가져 각자 한문제씩 맡아서 화이트보드를 이용하여 설명하는 시간을 가졌습니다.<br>
-이렇게 화이트보드를 활용해 다른 사람들에게 설명하는 시간을 가지며 문제에 대한 이해도를 더 완벽히 할 수 있었습니다.<br>
+화이트보드를 활용해 다른 사람들에게 설명하는 시간을 가지며 문제에 대한 이해도를 더 완벽히 할 수 있었습니다.<br>
+:point_right: **3주차 모의고사 진행(2021.08.26 10:00 ~ 11:30)**<br>
+<br>
 
+4 주차가 마무리되고 주차별 주제에서 3문제(난이도 상/중/하)를 모의고사 형식으로 진행했습니다.<br>
+시간이 완료되면 풀이 코드를 공용 레퍼지토리에 PR을 보내어 정해진 제출자의 코드를 리뷰를 해주고 리뷰어에게 저의 코드를 리뷰를 받는 형식으로 진행됐습니다.
+<br>
+<br>
+<br>
+
+:camera: **리뷰어 [dapsu](https://github.com/dapsu)에게 받은 리뷰**
+<br>
+<img src="https://user-images.githubusercontent.com/79436533/131933392-696a1639-71b0-41f3-96a8-78c2693f3d54.PNG"  width="800" height="600">
+<br>
+<br>
+
+:camera: **제출자 [ggam-nyang](https://github.com/ggam-nyang)에게 해준 리뷰**
+<img src="https://user-images.githubusercontent.com/79436533/131933360-e601bda6-880f-43d8-8dbc-3f5d3cedfd6d.PNG"  width="800" height="600">
+<br>
+<br>
+<br>
 <hr/>
 
 ## :eyes: 내가 하루동안 배우고 느낀 정리글
