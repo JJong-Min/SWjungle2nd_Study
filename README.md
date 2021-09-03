@@ -225,7 +225,7 @@ Red-Black Tree 구현하기
 개별로 진행한 것이 아닌 2명의 팀원과 함께 팀별로 진행했습니다.<br>
 각자 RB Tree 구현을 위한 코드를 짜는 과정에서 새로 배운 C언어 개념, RB Tree에 대한 지식, 리눅스 환경 등을 토의하며 진행했고 구현 시에 어려운 점을 서로 공유하며 같이 해결해나갔습니다.<br>
 
-**자세한 내용은 [rbtree_lab](https://github.com/JJong-Min/rbtree_lab)을 확인해주세요.**
+**자세한 내용은 [rbtree_lab](https://github.com/JJong-Min/rbtree_lab) Repository를 확인해주세요.**
 <br>
 
 <hr/>
