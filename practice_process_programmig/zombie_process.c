@@ -24,7 +24,7 @@ int main() {
     else {  // fork 실패
         perror("fork Fail! \n");
         return -1;
-    }
+    } 
      
     return 0;
 }
