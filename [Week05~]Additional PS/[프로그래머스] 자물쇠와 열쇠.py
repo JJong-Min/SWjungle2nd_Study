@@ -1,8 +1,8 @@
 def expand_lock(lock, N, M, size):
     expanded_lock = [[0 for i in range(size)] for _ in range(size)]
-    for y in range(N):
-        for x in range(N):
-            expanded_lock[y + M - 1][x + M - 1] = lock[y][x]
+    for x in range(N):
+        for y in range(N):
+            expanded_lock[x + M - 1][y + M - 1] = lock[x][y]
 
     return expanded_lock
 
@@ -17,15 +17,15 @@ def rotate(key):
     
     return [list(reversed(i)) for i in zip(*key)]
 
-def is_unlock(y, x, key, lock, N, M):
+def is_unlock(x, y, key, lock, N, M):
     _lock = [item[:] for item in lock]
-    for _y in range(M):
-        for _x in range(M):
-            _lock[_y + y][_x + x] += key[_y][_x]
+    for _x in range(M):
+        for _y in range(M):
+            _lock[_x + x][_y + y] += key[_x][_y]
 
-    for _y in range(N):
-        for _x in range(N):
-            if _lock[_y + M - 1][_x + M - 1] != 1:
+    for _x in range(N):
+        for _y in range(N):
+            if _lock[_x + M - 1][_y + M - 1] != 1:
                 return False
 
     return True
@@ -37,9 +37,9 @@ def solution(key, lock):
     expanded_lock = expand_lock(lock, N, M, size)
 
     for _ in range(4):
-        for y in range(size - M + 1):
-            for x in range(size - M + 1):
-                if is_unlock(y, x, key, expanded_lock, N, M):
+        for x in range(size - M + 1):
+            for y in range(size - M + 1):
+                if is_unlock(x, y, key, expanded_lock, N, M):
                     return True
         key = rotate(key)
 
