@@ -5,8 +5,20 @@
 2. 컴퓨터 시스템 3판 (Randal E. Bryan , David R. O'Hallaron 지음 | 피어슨에듀케이션코리아 | 2016년08월)
 3. Introduction to Algorithms, 3rd Edition (Thomas H .Cormen 지음 | 한빛아카데미 | 2014년06월)
 4. Data Structures & Algorithms in Python(Michael T. Goodrich 지음 | WILEY | 2013년02월)
+5. Operating Systems: Three easy pieces (Remzi Arpaci-Dusseau 지음 | Arpaci-Dusseau Books | 2015년08월)
+6. HTTP 완벽 가이드 (데이빗 고울리, 브라이언 토티, 마조리 세이어, 세일루 레디, 안슈 아가왈 지음 | 인사이트 | 2014년02월)
+7. 파이썬 알고리즘 인터뷰 (박상길 지음 | 책만 | 2020년07월)
+ 
+<br/>
+
+## :eyes: 폴더 설명
+1. **[Week01]Algorithm1 ~ [Week04]Algorithm4 폴더**는 1주차부터 4주차까지 풀었던 백준문제 풀이코드 파일이 있습니다.
+2. **[Week05~]Additional PS 폴더**는 알고리즘 주차가 끝난 5주차(2021.09.02)부터 매일 1문제이상씩 푼 풀이코드파일이 있습니다.
+3. **practice_process_programmig 폴더**는 week08(2021.09.27)부터 진행된 pintos를 구현하면서 컴퓨터 시스템 3판에 있는 실습코드를 따라해보며 작성한 코드파일이 있습니다.
+4. **HTTP 완벽 가이드 폴더**는 2021년 10월 11일부터 아침 9시 30분부터 11시 30분까지 HTTP 완벽 가이드 원서를 읽으며 개인적으로 정리한 md파일이 있습니다.
 
 <br/>
+
 <hr/>
 
 ## :eyes: 주차별 주제
@@ -196,7 +208,7 @@ BFS, DFS 기본 문제 풀기, BFS 개념 공부와 BFS 난이도 높은 문제 
 <br>
 <br>
 
-### :bell: 5주차 (탐험 준비)
+### :bell: 5~7주차 (탐험 준비)
 #### :one: **전체 진행 방식**
 :point_right: 매주 팀원들(2~3명이 한 팀)이 바뀌며 python이 아닌 C언어를 사용하여 고급 자료구조 및 웹 서버를 직접 구현합니다.
 <br>
@@ -226,6 +238,66 @@ Red-Black Tree 구현하기
 각자 RB Tree 구현을 위한 코드를 짜는 과정에서 새로 배운 C언어 개념, RB Tree에 대한 지식, 리눅스 환경 등을 토의하며 진행했고 구현 시에 어려운 점을 서로 공유하며 같이 해결해나갔습니다.<br>
 
 **자세한 내용은 [rbtree_lab](https://github.com/JJong-Min/rbtree_lab) Repository를 확인해주세요.**
+<br>
+<br>
+<br>
+
+#### :three: **WEEK06 (2021.09.09 ~ 2021.09.15)**
+
+:point_right: **주제**
+<br>
+Malloc 구현하기
+<br>
+<br>
+
+:point_right: **팀원**
+<br>
+[SEO7715](https://github.com/SEO7715), [Jungbum Woo](https://github.com/jungbumwoo)
+<br>
+<br>
+
+:point_right: **진행방식**
+<br> 
+6주차부터는 동적메모리할당기(dynamic memory allocator)중 하나인 malloc을 구현하는 시간을 가졌습니다.<br>
+2일정도는 각자 개념공부를 하며 매일 점심 식사 전 혹은 저녁 10시에 미팅시간을 가져 팀원들과 공부한 내용을 공부했습니다.<br>
+구현한 내용은 implicit list를 시작으로 하여 explicit list, segrated list를 사용해서 구현했습니다.<br>
+할당 주소위치를 찾는 방식은 first-fit, next-fit을 사용했습니다.<br>
+6주차가 끝나고 9월 16일 오전 10시부터 코드리뷰를 진행했습니다.<br>
+다른 사람의 코드를 읽는 능력과 피드백을 해주는 코멘트를 다는 능력을 키우고 다른 사람에게 받은 코멘트를 보며 다시 코드를 수정하는 시간을 가졌습니다.<br>
+
+**자세한 내용은 [malloclab-jungle](https://github.com/JJong-Min/malloclab-jungle) Repository를 확인해주세요.**
+<br>
+<br>
+<br>
+
+#### :four: **WEEK07 (2021.09.16 ~ 2021.09.26)**
+
+:point_right: **주제**
+<br>
+Web Server 구현하기
+<br>
+<br>
+
+:point_right: **팀원**
+<br>
+[inkyu](https://github.com/grapestore), [dapsu](https://github.com/dapsu)
+<br>
+<br>
+
+:point_right: **진행방식**
+<br> 
+7주차부터는 Soket programming을 이용한 web server를 구현하는 시간을 가졌습니다.<br>
+추석연휴기간이 포함되어있어 soket을 활용한 TCP/IP 통신에 대한 개념 공부를 확실히 하고 구현에 들어갔습니다.<br>
+6주차와 마찬가지로 팀원과 미팅시간을 정하여 진도체크를 하고 서로 공부한 내용을 공유했습니다.<br>
+서로가 모르는 내용을 질문을 하며 부족한 점을 채워기 위해 다 같이 노력하며 팀 워크를 발휘했습니다.<br>
+socket programming을 활용한 web server 구현을 마무리가 된 후에는 proxy 구현을 시작했습니다.<br>
+proxy의 기능 중 하나인 cashe는 구현을 완료하지는 못했지만 오픈소스 코드를 보며 로직을 이해하려고 했고 proxy에 대한 개념을 공부했습니다.<br>
+7주차가 끝나고 9월 27일 오전 10시부터 코드리뷰를 진행했습니다.<br>
+다른 사람의 코드를 읽는 능력과 피드백을 해주는 코멘트를 다는 능력을 키우고 다른 사람에게 받은 코멘트를 보며 다시 코드를 수정하는 시간을 가졌습니다.<br>
+
+**자세한 내용은 [webproxy](https://github.com/JJong-Min/webproxy) Repository를 확인해주세요.**
+<br>
+<br>
 <br>
 
 <hr/>
