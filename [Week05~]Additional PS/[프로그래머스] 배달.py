@@ -1,3 +1,31 @@
+from collections import defaultdict, deque
+
+def dikstra(i, N, road_list):
+    values = [float('inf') for _ in range(N + 1)]
+    values[i] = 0
+    queue = deque([[1, 0]])
+    while queue:
+        x, v = queue.popleft()
+        for new_x, new_v in road_list[x]:
+            if new_v >= values[new_x]:
+                continue
+            if v + new_v < values[new_x]:
+                values[new_x] = v + new_v
+                queue.append([new_x, values[new_x]])
+    return values
+    
+def solution(N, road, K):
+    answer = 0
+    road_list = [[]for _ in range(N + 1)]
+    for x, y, v in road:
+        road_list[x].append([y, v])
+        road_list[y].append([x, v])
+    values = dikstra(1, N, road_list)
+
+    answer = len([i for i in values if i <= K])
+
+    return answer
+
 from queue import PriorityQueue
 
 def dijkstra(road, N):
