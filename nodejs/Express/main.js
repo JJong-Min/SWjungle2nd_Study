@@ -1,10 +1,6 @@
 const express = require('express');
+const logger = require('morgan');
 const app = express();
 
-const mw = (req, res, next) => {
-  console.log('mw!');
-  next();
-}
-
-app.use(mw);
+app.use(logger('dev'));
 app.listen(3000, () => console.log('running'));
