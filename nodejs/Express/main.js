@@ -1,16 +1,9 @@
 const express = require('express');
 const logger = require('morgan');
 const app = express();
+const users = [{'name': 'Alley'}, {'name': 'Endy'}];
 
-const mw = (req, res, next) => {
-  // throw Error('error!');
-  next();
+app.get('/', (req, res) => res.send('Hello World!\n'));
+app.get('/users', (req, res) => res.json(users));
 
-}
-const errorMw = (err, req, res, next) => {
-  console.log(err.message);
-}
-app.use(logger('dev'));
-app.use(mw);
-app.use(errorMw);
 app.listen(3000, () => console.log('running'));
