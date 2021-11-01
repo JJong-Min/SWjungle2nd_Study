@@ -4,12 +4,21 @@ class Person {
         this.first = first;
         this.second = second;
     }
+    sum() {
+        return this.first + this.second;
+    }
+    
 }
 
-Person.prototype.sum = function() {
-    return this.first + this.second;
+class PersonPlus extends Person{
+    avg() {
+        return (this.first + this.second) / 2;
+    }
+    
 }
 
 var kim = new Person('kim', 10, 20);
-console.log('kim', kim);
 console.log("kim.sum()", kim.sum());
+
+var lee = new PersonPlus('lee', 10, 20);
+console.log("lee.sum()", lee.avg());
