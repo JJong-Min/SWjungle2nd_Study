@@ -91,6 +91,10 @@ var app = http.createServer(function(request,response){
         response.end(html);
       });
     } else if(pathname === '/create_process'){
+      if (authIsOwner(request, response) === false) {
+        response.end('Login required!!');
+        return False;
+      }
       var body = '';
       request.on('data', function(data){
           body = body + data;
