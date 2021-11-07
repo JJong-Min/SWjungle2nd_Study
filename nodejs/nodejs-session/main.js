@@ -3,10 +3,10 @@ var app = express();
 var fs = require('fs');
 var bodyParser = require('body-parser');
 var compression = require('compression');
-var helmet = require('helmet');
+var helmet = require('helmet')
 app.use(helmet());
-var session = require('express-session');
-var FileStore = require('session-file-store')(session);
+var session = require('express-session')
+var FileStore = require('session-file-store')(session)
 
 
 app.use(express.static('public'));
