@@ -35,27 +35,27 @@ var userRouter =require('./routes/user.js')(passport);
 app.use('/api/user', userRouter);
 
 
-app.get('/challenge', function(req, res){
+app.get('/challenge_create', function(req, res){
     res.sendFile(__dirname+'/routes/createChallenge.html');
 });
 
 app.post('/challenge_process', function(req, res){
-    console.log('req_post_content', req.body);
     const max_user = parseInt(req.body.max_user);
     const cnt_of_week = parseInt(req.body.cnt_of_week);
     const life = parseInt(req.body.life);
-    connection.query('INSERT INTO Challenge (challengeName, challengeContent, createUserNickName, maxUserNumber, cntOfWeek, life) VALUES (?, ?, ?, ?, ?, ?)', [req.body.challenge_name, req.body.challenge_content, req.user.nickname, max_user, cnt_of_week, life], function(error, results){
-        console.log(results);
-    })
-    res.status(200).json({
-        msg: "success insert!",
-    })
 
+    connection.query('INSERT INTO Challenge (challengeName, challengeContent, createUserNickName, maxUserNumber, cntOfWeek, life) VALUES (?, ?, ?, ?, ?, ?)', [req.body.challenge_name, req.body.challenge_content, req.user.nickname, max_user, cnt_of_week, life], function(error, results){
+        console.log(req.user.id, results.insertId);
+        connection.query('INSERT INTO user_info_has_Challenge (user_info_id, Challenge_id) VALUES (?, ?)', [req.user.id, results.insertId])
+        res.redirect(`/challenge/?id=${results}`)
+    })
+});
+
+app.get('/challenge', function(req, res){
+    res.sendFile(__dirname+'/routes/createChallenge.html');
 });
 
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
     console.log('연결성공');
   });
-  
-  
