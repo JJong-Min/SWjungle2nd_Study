@@ -43,10 +43,35 @@ const j = schedule.scheduleJob({hour: 20, minute: 02}, function(){
     let day = today.getDay();
     console.log(day);
     connection.query('INSERT INTO Alien_dead (user_info_id, Challenge_id, createDate, alienName, Alien_image_url, accuredAuthCnt, failureCnt) SELECT user_info_id, Challenge_id, createDate, alienName, Alien_image_url, accuredAuthCnt, failureCnt FROM Alien where week_auth_cnt < total_auth_cnt AND (auth_day = 7 OR auth_day = ?)', [day], function(err, results){
-        if (err) throw err;
-        console.log('success insert!!!!!!!!!', results);
+        if (err) {
+            console.error(err);
+        }
+        console.log('success insert dead_alien!!!!!!!!!', results);
     });
-    connection.query('DELETE FROM Authentification USING Alien LEFT JOIN Authentification ON Alien.id = Authentification.Alien_id where week_auth_cnt < total_auth_cnt AND (auth_day = 7 OR auth_day = ?)', [day],')
+    connection.query('INSERT INTO dead_authentification SELECT Authentification.id, Authentification.user_info_id, Alien_id, Authentification.Challenge_id, requestDate, responseDate, requestUserNickname, responseUserNickname, isAuth, imgURL FROM Authentification LEFT JOIN Alien ON Alien.id = Authentification.Alien_id where week_auth_cnt < total_auth_cnt AND (auth_day = 7 OR auth_day = ?)', [day], function(err, results){
+        if (err) {
+            console.error(err);
+        }
+        console.log('success insert dead_authentification!!!!!!!!!', results);
+    });
+    connection.query('DELETE FROM Authentification USING Alien LEFT JOIN Authentification ON Alien.id = Authentification.Alien_id where week_auth_cnt < total_auth_cnt AND (auth_day = 7 OR auth_day = ?)', [day], function(err, results){
+        if (err) {
+            console.error(err);
+        }
+        console.log('success delete authentification!!!!!!!!!', results);
+    });
+    connection.query('DELETE FROM Alien where week_auth_cnt < total_auth_cnt AND (auth_day = 7 OR auth_day = ?)', [day], function(err, results){
+        if (err) {
+            console.error(err);
+        }
+        console.log('success delete Alien!!!!!!!!!', results);
+    });
+    connection.query('UPDATE Alien SET week_auth_cnt = 0 where week_auth_cnt < total_auth_cnt AND (auth_day = 7 OR auth_day = ?)', [day], function(err, results){
+        if (err) {
+            console.error(err);
+        }
+        console.log('success update Alien!!!!!!!!!', results);
+    });
     
 });
 
