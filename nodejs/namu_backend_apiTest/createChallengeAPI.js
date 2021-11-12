@@ -11,7 +11,10 @@ app.use(helmet());
 var session = require('express-session');
 var FileStore = require('session-file-store')(session);
 var flash = require('connect-flash');
+const schedule = require('node-schedule');
 const port = 3001
+const querystring = require('querystring');
+
 
 app.use(bodyParser.urlencoded({ extended: false }));
 var mysql = require('mysql');
@@ -34,28 +37,53 @@ var passport = require('./lib/passport')(app, connection);
 var userRouter =require('./routes/user.js')(passport);
 app.use('/api/user', userRouter);
 
+// 생명체 사망 api
+const j = schedule.scheduleJob({hour: 20, minute: 02}, function(){
+    let today = new Date();
+    let day = today.getDay();
+    console.log(day);
+    connection.query('INSERT INTO Alien_dead (user_info_id, Challenge_id, createDate, alienName, Alien_image_url, accuredAuthCnt, failureCnt) SELECT user_info_id, Challenge_id, createDate, alienName, Alien_image_url, accuredAuthCnt, failureCnt FROM Alien where week_auth_cnt < total_auth_cnt AND (auth_day = 7 OR auth_day = ?)', [day], function(err, results){
+        if (err) throw err;
+        console.log('success insert!!!!!!!!!', results);
+    });
+    connection.query('DELETE FROM Authentification USING Alien LEFT JOIN Authentification ON Alien.id = Authentification.Alien_id where week_auth_cnt < total_auth_cnt AND (auth_day = 7 OR auth_day = ?)', [day],')
+    
+});
 
+// 챌린지 생성 폼으로 가기
 app.get('/challenge_create', function(req, res){
     res.sendFile(__dirname+'/routes/createChallenge.html');
 });
 
+// 챌린지 생성 api
 app.post('/challenge_process', function(req, res){
+
+    console.log(req.body);
     const max_user = parseInt(req.body.max_user);
     const cnt_of_week = parseInt(req.body.cnt_of_week);
     const life = parseInt(req.body.life);
 
     connection.query('INSERT INTO Challenge (challengeName, challengeContent, createUserNickName, maxUserNumber, cntOfWeek, life) VALUES (?, ?, ?, ?, ?, ?)', [req.body.challenge_name, req.body.challenge_content, req.user.nickname, max_user, cnt_of_week, life], function(error, results){
-        console.log(req.user.id, results.insertId);
+        console.log(req.user.id, results);
         connection.query('INSERT INTO user_info_has_Challenge (user_info_id, Challenge_id) VALUES (?, ?)', [req.user.id, results.insertId])
-        res.redirect(`/challenge/?id=${results}`)
+        res.redirect(`/challenge/?id=${results.insertId}`)
     })
 });
 
+// 챌린지 어항(가정, 생명체 생성 버튼만 존재)
 app.get('/challenge', function(req, res){
-    res.sendFile(__dirname+'/routes/createChallenge.html');
+    console.log(req);
+    res.sendFile(__dirname+'/routes/challenge.html');
 });
+
+// 생명체 생성 api
+app.post('/create_alien', function(req, res){
+    connection.query('INSERT INTO Alien (user_info_id, Challenge_id, alienName, Alien_image_url) VALUES (?, ?, ?, ?, ?, ?, ?)', [req.user.id, req.challenge_id, 'aa', 'url1']);
+})
+
 
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
     console.log('연결성공');
+    
   });
