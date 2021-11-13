@@ -99,6 +99,25 @@ const j = schedule.scheduleJob({hour: 00, minute: 00}, function(){
     });
 });
 
+// 졸업 토글 변경 API
+app.get('/change_toggle', function(req, res){
+    if (req.params.toggle == 1) {
+    connection.query('UPDATE Alien SET graduate_toogle = 1 where id = ?', [res.user.id], function(err, results){
+        if (err) {
+            console.error(err);
+        }
+        console.log('success update Alien graduate_toogle!!!!!!!!!', results);
+    });
+    } else {
+        connection.query('UPDATE Alien SET graduate_toogle = 0 where id = ?', [res.user.id], function(err, results){
+            if (err) {
+                console.error(err);
+            }
+            console.log('success update Alien graduate_toogle!!!!!!!!!', results);
+        });
+    }
+});
+
 // 챌린지 생성 폼으로 가기
 app.get('/challenge_create', function(req, res){
     res.sendFile(__dirname+'/routes/createChallenge.html');
