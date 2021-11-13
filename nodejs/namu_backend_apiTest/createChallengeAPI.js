@@ -37,11 +37,12 @@ var passport = require('./lib/passport')(app, connection);
 var userRouter =require('./routes/user.js')(passport);
 app.use('/api/user', userRouter);
 
+// 생명체 사망 api and 졸업 api
 const j = schedule.scheduleJob({hour: 00, minute: 00}, function(){
     let today = new Date();
     let day = today.getDay();
     console.log(day);
-    connection.query('INSERT INTO Alien_dead (user_info_id, Challenge_id, createDate, alienName, Alien_image_url, accuredAuthCnt, failureCnt) SELECT user_info_id, Challenge_id, createDate, alienName, Alien_image_url, accuredAuthCnt, failureCnt FROM Alien where week_auth_cnt < total_auth_cnt AND (auth_day = 7 OR auth_day = ?)', [day], function(err, results){
+    connection.query('INSERT INTO Alien_dead SELECT * FROM Alien where week_auth_cnt < total_auth_cnt AND (auth_day = 7 OR auth_day = ?)', [day], function(err, results){
         if (err) {
             console.error(err);
         }
@@ -118,6 +119,16 @@ app.get('/change_toggle', function(req, res){
     }
 });
 
+// 메인화면 랜덤 생명체 보내기
+app.get('/main', function(req, res) {
+    connection.query('select * from Alien inner join Challenge on Alien.Challenge_id = Challenge.id order by accuredAuthCnt desc limit 50', function(err, results) {
+        if (err) {
+            console.error(err);
+        }
+        console.log('success random alien!!!!!!!!!!!!1', results);
+    });
+});
+
 // 챌린지 생성 폼으로 가기
 app.get('/challenge_create', function(req, res){
     res.sendFile(__dirname+'/routes/createChallenge.html');
@@ -147,6 +158,9 @@ app.get('/challenge', function(req, res){
 // 생명체 생성 api
 app.post('/create_alien', function(req, res){
     connection.query('INSERT INTO Alien (user_info_id, Challenge_id, alienName, Alien_image_url) VALUES (?, ?, ?, ?, ?, ?, ?)', [req.user.id, req.challenge_id, 'aa', 'url1']);
+    connection.query('UPDATE Challenge set participantNumber = participantNumber + 1 where id = ?', [req.parms.id]);
+
+
 })
 
 
