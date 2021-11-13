@@ -66,7 +66,7 @@ const j = schedule.scheduleJob({hour: 00, minute: 00}, function(){
         }
         console.log('success delete Alien!!!!!!!!!', results);
     });
-    connection.query('UPDATE Alien SET week_auth_cnt = 0 where week_auth_cnt < total_auth_cnt AND (auth_day = 7 OR auth_day = ?)', [day], function(err, results){
+    connection.query('UPDATE Alien SET week_auth_cnt = 0 where auth_day = 7 OR auth_day = ?', [day], function(err, results){
         if (err) {
             console.error(err);
         }
@@ -74,25 +74,25 @@ const j = schedule.scheduleJob({hour: 00, minute: 00}, function(){
     });
     
     // 졸업 API
-    connection.query('INSERT INTO Alien_graduated (user_info_id, Challenge_id, createDate, alienName, Alien_image_url, accuredAuthCnt, failureCnt) SELECT user_info_id, Challenge_id, createDate, alienName, Alien_image_url, accuredAuthCnt, failureCnt FROM Alien where graduate_toogle = 1 AND (auth_day = 7 OR auth_day = ?)', [day], function(err, results) {
+    connection.query('INSERT INTO Alien_graduated SELECT * FROM Alien where graduate_toggle = 1 AND (auth_day = 7 OR auth_day = ?)', [day], function(err, results) {
         if (err) {
             console.error(err);
         }
-        console.log('success insert dead_alien!!!!!!!!!', results);
+        console.log('success insert graduated_alien!!!!!!!!!', results);
     });
-    connection.query('INSERT INTO graduated_authentification SELECT Authentification.id, Authentification.user_info_id, Alien_id, Authentification.Challenge_id, requestDate, responseDate, requestUserNickname, responseUserNickname, isAuth, imgURL FROM Authentification LEFT JOIN Alien ON Alien.id = Authentification.Alien_id where graduate_toogle = 1 AND (auth_day = 7 OR auth_day = ?)', [day], function(err, results)  {
+    connection.query('INSERT INTO graduated_authentification SELECT Authentification.id, Authentification.user_info_id, Alien_id, Authentification.Challenge_id, requestDate, responseDate, requestUserNickname, responseUserNickname, isAuth, imgURL FROM Authentification LEFT JOIN Alien ON Alien.id = Authentification.Alien_id where graduate_toggle = 1 AND (auth_day = 7 OR auth_day = ?)', [day], function(err, results)  {
         if (err) {
             console.error(err);
         }
-        console.log('success insert dead_authentification!!!!!!!!!', results);
+        console.log('success insert graduated_authentification!!!!!!!!!', results);
     });
-    connection.query('DELETE FROM Authentification USING Alien LEFT JOIN Authentification ON Alien.id = Authentification.Alien_id where graduate_toogle = 1 AND (auth_day = 7 OR auth_day = ?)', [day], function(err, results){
+    connection.query('DELETE FROM Authentification USING Alien LEFT JOIN Authentification ON Alien.id = Authentification.Alien_id where graduate_toggle = 1 AND (auth_day = 7 OR auth_day = ?)', [day], function(err, results){
         if (err) {
             console.error(err);
         }
         console.log('success delete authentification!!!!!!!!!', results);
     });
-    connection.query('DELETE FROM Alien where graduate_toogle = 1 AND (auth_day = 7 OR auth_day = ?)', [day], function(err, results) {
+    connection.query('DELETE FROM Alien where graduate_toggle = 1 AND (auth_day = 7 OR auth_day = ?)', [day], function(err, results) {
         if (err) {
             console.error(err);
         }
