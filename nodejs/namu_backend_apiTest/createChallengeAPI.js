@@ -37,8 +37,7 @@ var passport = require('./lib/passport')(app, connection);
 var userRouter =require('./routes/user.js')(passport);
 app.use('/api/user', userRouter);
 
-// 생명체 사망 api
-const j = schedule.scheduleJob({hour: 20, minute: 02}, function(){
+const j = schedule.scheduleJob({hour: 00, minute: 00}, function(){
     let today = new Date();
     let day = today.getDay();
     console.log(day);
@@ -73,6 +72,31 @@ const j = schedule.scheduleJob({hour: 20, minute: 02}, function(){
         console.log('success update Alien!!!!!!!!!', results);
     });
     
+    // 졸업 API
+    connection.query('INSERT INTO Alien_graduated (user_info_id, Challenge_id, createDate, alienName, Alien_image_url, accuredAuthCnt, failureCnt) SELECT user_info_id, Challenge_id, createDate, alienName, Alien_image_url, accuredAuthCnt, failureCnt FROM Alien where graduate_toogle = 1 AND (auth_day = 7 OR auth_day = ?)', [day], function(err, results) {
+        if (err) {
+            console.error(err);
+        }
+        console.log('success insert dead_alien!!!!!!!!!', results);
+    });
+    connection.query('INSERT INTO graduated_authentification SELECT Authentification.id, Authentification.user_info_id, Alien_id, Authentification.Challenge_id, requestDate, responseDate, requestUserNickname, responseUserNickname, isAuth, imgURL FROM Authentification LEFT JOIN Alien ON Alien.id = Authentification.Alien_id where graduate_toogle = 1 AND (auth_day = 7 OR auth_day = ?)', [day], function(err, results)  {
+        if (err) {
+            console.error(err);
+        }
+        console.log('success insert dead_authentification!!!!!!!!!', results);
+    });
+    connection.query('DELETE FROM Authentification USING Alien LEFT JOIN Authentification ON Alien.id = Authentification.Alien_id where graduate_toogle = 1 AND (auth_day = 7 OR auth_day = ?)', [day], function(err, results){
+        if (err) {
+            console.error(err);
+        }
+        console.log('success delete authentification!!!!!!!!!', results);
+    });
+    connection.query('DELETE FROM Alien where graduate_toogle = 1 AND (auth_day = 7 OR auth_day = ?)', [day], function(err, results) {
+        if (err) {
+            console.error(err);
+        }
+        console.log('success delete Alien!!!!!!!!!', results);
+    });
 });
 
 // 챌린지 생성 폼으로 가기
