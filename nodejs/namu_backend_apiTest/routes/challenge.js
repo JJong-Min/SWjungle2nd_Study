@@ -13,7 +13,8 @@ module.exports = function (connection) {
         if (err1) {
             console.error(err1);
             res.status(501).json({
-                msg: 'fail',
+                result: "fail",
+                msg: "cant insert challenge infomations"
             });
         }
         console.log('success insert new challenge information', results);
@@ -21,27 +22,29 @@ module.exports = function (connection) {
             if (err2) {
                 console.error(err2);
                 res.status(501).json({
-                    msg: 'fail',
+                    result: "fail",
+                    msg: "cant insert challenge_id"
                 });
             }
             console.log('success insert user_id and challenge_id', results);
         });
     });
     res.status(200).json({
-        msg: 'sucess',
+        result: "success",
+        msg: "do insert"
     });
 });
     router.use(function (req, res, next) {
         res.status(404).json({
+            result: "fail",
             msg: 'Sorry cant post that!',
-            body: req.body,
         });
     });
     router.use(function (err, req, res, next) {
         console.error(err.stack)
         res.status(500).json({
+            result: "fail",
             msg: 'Something broke!',
-            body: req.body,
         });
     });
 
