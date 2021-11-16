@@ -10,7 +10,8 @@ module.exports = function (connection) {
             if (err) {
                 console.error(err);
                 res.status(501).json({
-                    msg: 'fail',
+                    result: "fail",
+                    msg: "cant insert alien infomations"
                 });
             }
         });
@@ -19,27 +20,29 @@ module.exports = function (connection) {
             if (err) {
                 console.error(err);
                 res.status(501).json({
-                    msg: 'fail',
+                    result: "fail",
+                    msg: "cant update challenge table"
                 });
             }
         });
        
         res.status(200).json({
-            msg: 'sucess',
+            result: "success",
+            msg: "do insert"
           });
     });
 
     router.use(function (req, res, next) {
         res.status(404).json({
+            result: "fail",
             msg: 'Sorry cant post that!',
-            body: req.body,
         });
     });
     router.use(function (err, req, res, next) {
         console.error(err.stack)
         res.status(500).json({
+            result: "fail",
             msg: 'Something broke!',
-            body: req.body,
           });
     });
     
