@@ -7,6 +7,14 @@ const morgan = require("morgan");
 const app = express();
 const scheduler = require("./routes/scheduler.js");
 
+const pool = mysql.createPool({
+  connectionLimit : 10,
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
+  multipleStatements: true,
+});
 
 const port = process.env.PORT || 5000;
 
