@@ -100,59 +100,44 @@ export default function NewAlien(props) {
   };
 
   return (
-    <div class="flex justify-center items-center w-full h-full bg-blue-400">
+    <div class="flex justify-center items-center w-full h-full bg-blue-400 p-10">
     <div class="w-1/2 h-full bg-white rounded shadow-2xl p-8 m-4">
         <h1 class="block w-full text-center text-gray-800 text-2xl font-bold mb-6">새로운 챌린지 생성</h1>
-            <div class="flex flex-col mb-4">
+            <div class="flex flex-col mb-4 p-5">
                 <label class="mb-2 font-bold text-lg text-gray-900" for="first_name">챌린지 이름</label>
                 <input class="border py-2 px-3 text-grey-800" type="text" name="first_name" id="first_name" />
             </div>
 
-            <div class="main flex border rounded-full overflow-hidden m-4 select-none">
+            <div class="main flex border rounded-full overflow-hidden m-4 select-none ">
               <div class="title py-3 my-auto px-5 bg-indigo-500 text-white text-sm font-semibold mr-3">Category</div>
-              <label class="flex radio p-2 cursor-pointer">
-                <input class="my-auto transform scale-125" type="radio" name="sfg" />
-                <div class="title px-2">운동</div>
-              </label>
-
-              <label class="flex radio p-2 cursor-pointer">
-                <input class="my-auto transform scale-125" type="radio" name="sfg" />
-                <div class="title px-2">실생활</div>
-              </label>
-
-              <label class="flex radio p-2 cursor-pointer">
-                <input class="my-auto transform scale-125" type="radio" name="sfg" />
-                <div class="title px-2">공부</div>
-              </label>
-
-              <label class="flex radio p-2 cursor-pointer">
-                <input class="my-auto transform scale-125" type="radio" name="sfg" />
-                <div class="title px-2">독서</div>
-              </label>
-
-              <label class="flex radio p-2 cursor-pointer">
-                <input class="my-auto transform scale-125" type="radio" name="sfg" />
-                <div class="title px-2">기타</div>
-              </label>
+              <select class="border py-2 px-7 text-grey-800">
+                <option value={SELECT_DEFAULT}>선택</option>
+                <option value="운동">운동</option>
+                <option value="실생활">실행활</option>
+                <option value="독서">독서</option>
+                <option value="공부">공부</option>
+                <option value="기타">기타</option>
+              </select>
             </div>
             
-            <div class="flex flex-col mb-4">
+            <div class="flex flex-col mb-4 p-5">
                 <label class="mb-2 font-bold text-lg text-gray-900" for="textarea">챌린지 설명</label>
-                <textarea class="border py-2 px-3 text-grey-800" name="textarea" id="textarea"></textarea>
+                <textarea class="border py-2 px-3 text-grey-800" name="textarea" id="textarea" rows="4"></textarea>
             </div>
 
-            <div class="flex flex-col mb-4">
+            <div class="flex flex-col mb-4 p-4">
               <label class="mb-2 font-bold text-lg text-gray-900">최대 참여 인원</label>
               <ReactSlider
                 step={5}
                 min={0}
                 max={100}
                 className="w-full h-3 pr-2 my-4 bg-gray-200 rounded-md cursor-grab"
-                thumbClassName="absolute w-7 h-7 cursor-grab bg-indigo-500 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 -top-2px"/>
+                thumbClassName="absolute w-7 h-7 cursor-grab bg-indigo-500 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 -top-2px"
+/>
             </div>
 
             
-            <div class="flex flex-col mb-4">
+            <div class="flex flex-col mb-4 p-4">
                 <label class="mb-2 font-bold text-lg text-gray-900" for="Select">주 몇회?</label>
                 <select class="border py-2 px-3 text-grey-800">
                 <option value={SELECT_DEFAULT}>선택</option>
@@ -167,8 +152,8 @@ export default function NewAlien(props) {
             </div>
 
             
-
             <button class="p-2 pl-5 pr-5 transition-colors duration-700 transform bg-indigo-500 hover:bg-blue-400 text-gray-100 text-lg rounded-lg focus:border-4 border-indigo-300" type="button" onClick={handleSubmit}>챌린지 생성</button>
+            
     </div>
 </div>
   );
