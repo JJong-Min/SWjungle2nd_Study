@@ -100,75 +100,54 @@ export default function NewAlien(props) {
   };
 
   return (
-    <div className={styles.body}>
-      <h1>새로운 챌린지 생성하기</h1>
-      
-      <label>
-        <h4>챌린지 제목</h4>
-      </label>
-      <input
-        type="text"
-        placeholder="챌린지 이름을 입력해주세요"
-        rows="3"
-        size="30"
-        value={challengeTitle}
-        onChange={handleChallengeTitle}
-      ></input>
-
-      <label>
-        <h4>챌린지 설명</h4>
-      </label>
-      <textarea
-        placeholder="챌린지에 대한 간단한 설명을 입력해주세요"
-        rows="5"
-        cols="30"
-        value={challengeDescription}
-        onChange={handleChallengeDescription}
-      ></textarea>
-
-      <label>
-        챌린지 최대 인원:
-      </label>
-        <select value={challengeCapacity} onChange={handleChallengeCapacity}>
-          <option value={SELECT_DEFAULT}>선택</option>
-          <option value="2">2</option>
-          <option value="4">4</option>
-          <option value="6">6</option>
-          <option value="8">8</option>
-        </select>
-      
-      <label>
-        챌린지 참여 빈도:
-      </label>
-        
-        <select value={challengeFrequency} onChange={handleChallengeFrequency}>
-          <option value={SELECT_DEFAULT}>선택</option>
-          <option value="7">매일 참여</option>
-          <option value="6">주 6회 참여</option>
-          <option value="5">주 5회 참여</option>
-          <option value="4">주 4회 참여</option>
-          <option value="3">주 3회 참여</option>
-          <option value="2">주 2회 참여</option>
-          <option value="1">주 1회 참여</option>
-        </select>
-
-      <label>
-        <h4>챌린지 태그</h4>
-      </label>
-      <input
-        type="text"
-        placeholder="챌린지 태그를 입력해주세요"
-        rows="3"
-        size="30"
-        value={challengeTag}
-        onChange={handleChallengeTag}
-      ></input>
-    
-      <div style={{ color: "#cc3333" }}>{challengeMessage}</div>
-      <div class="text-center">
-        <button class="p-2 pl-5 pr-5 transition-colors duration-700 transform bg-indigo-500 hover:bg-blue-400 text-gray-100 text-lg rounded-lg focus:border-4 border-indigo-300" type="button" onClick={handleSubmit}>챌린지 생성</button>
-      </div>
+    <div class="flex justify-center items-center w-full bg-blue-400">
+    <div class="w-1/2 bg-white rounded shadow-2xl p-8 m-4">
+        <h1 class="block w-full text-center text-gray-800 text-2xl font-bold mb-6">Component Form</h1>
+        <form action="/" method="post">
+            <div class="flex flex-col mb-4">
+                <label class="mb-2 font-bold text-lg text-gray-900" for="first_name">First Name</label>
+                <input class="border py-2 px-3 text-grey-800" type="text" name="first_name" id="first_name" />
+            </div>
+            <div class="flex flex-col mb-4">
+                <label class="mb-2 font-bold text-lg text-gray-900" for="last_name">Last Name</label>
+                <input class="border py-2 px-3 text-grey-800" type="text" name="last_name" id="last_name" />
+            </div>
+            <div class="flex flex-col mb-4">
+                <label class="mb-2 font-bold text-lg text-gray-900" for="email">Email</label>
+                <input class="border py-2 px-3 text-grey-800" type="email" name="email" id="email" />
+            </div>
+            <div class="flex flex-col mb-4">
+                <label class="mb-2 font-bold text-lg text-gray-900" for="password">Password</label>
+                <input class="border py-2 px-3 text-grey-800" type="password" name="password" id="password" />
+            </div>
+            <div class="flex flex-col mb-4">
+                <label class="mb-2 font-bold text-lg text-gray-900" for="Date">Date</label>
+                <input class="border py-2 px-3 text-grey-800" type="date" name="date" id="date" />
+            </div>
+            <div class="flex flex-col mb-4">
+                <label class="mb-2 font-bold text-lg text-gray-900" for="File">File</label>
+                <input class="border py-2 px-3 text-grey-800" type="file" name="file" id="file" />
+            </div>
+            <div class="flex flex-col mb-4">
+                <label class="mb-2 font-bold text-lg text-gray-900" for="color">Range</label>
+                <input class="border py-2 text-grey-800" type="range" name="range" id="range" />
+            </div>
+            <div class="flex flex-col mb-4">
+                <label class="mb-2 font-bold text-lg text-gray-900" for="textarea">textarea</label>
+                <textarea class="border py-2 px-3 text-grey-800" name="textarea" id="textarea"></textarea>
+            </div>
+            <div class="flex flex-col mb-4">
+                <label class="mb-2 font-bold text-lg text-gray-900" for="Select">Select</label>
+                <select class="border py-2 px-3 text-grey-800">
+                    <option>Surabaya</option>
+                    <option>Jakarta</option>
+                    <option>Bandung</option>
+                    <option>Mojokerto</option>
+                </select>
+            </div>
+            <button class="block bg-green-400 hover:bg-green-600 text-white uppercase text-lg mx-auto p-4 rounded" type="submit">Save</button>
+        </form>
     </div>
-    
+</div>
   );
 }
