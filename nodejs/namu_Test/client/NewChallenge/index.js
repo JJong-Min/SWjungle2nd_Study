@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
 import styles from "./index.module.css";
 import api from "../../apis/index.js";
 
@@ -138,10 +137,10 @@ export default function NewAlien(props) {
           <option value="8">8</option>
         </select>
       
-
       <label>
         챌린지 참여 빈도:
       </label>
+        
         <select value={challengeFrequency} onChange={handleChallengeFrequency}>
           <option value={SELECT_DEFAULT}>선택</option>
           <option value="7">매일 참여</option>
@@ -165,10 +164,11 @@ export default function NewAlien(props) {
         onChange={handleChallengeTag}
       ></input>
     
-        <div style={{ color: "#cc3333" }}>{challengeMessage}</div>
-        <button type="button" onClick={handleSubmit}>
-          챌린지 생성
-        </button>
+      <div style={{ color: "#cc3333" }}>{challengeMessage}</div>
+      <div class="text-center">
+        <button class="p-2 pl-5 pr-5 transition-colors duration-700 transform bg-indigo-500 hover:bg-blue-400 text-gray-100 text-lg rounded-lg focus:border-4 border-indigo-300" type="button" onClick={handleSubmit}>챌린지 생성</button>
+      </div>
     </div>
+    
   );
 }
