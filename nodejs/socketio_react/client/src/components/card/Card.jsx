@@ -7,7 +7,11 @@ import Info from "../../img/info.svg";
 import { useState } from "react";
 
 const Card = ({post}) => {
-    const [liked, sektLiked] = useState(false);
+    const [liked, setLiked] = useState(false);
+
+    const handleNotification = () => {
+        setLiked(true);
+    }
     return (
         <div className="card">
             <div className="info">
@@ -18,7 +22,7 @@ const Card = ({post}) => {
         <div className="interaction">
             {liked ? (<img src={HeartFilled} alt="" classname="cardIcon" />
             ) : (
-                <img src={Heart} alt="" classname="cardIcon" />
+                <img src={Heart} alt="" classname="cardIcon" onClick={handleNotification}/>
             )}
             
             <img src={Comment} alt="" classname="cardIcon" />
