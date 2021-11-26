@@ -2,16 +2,20 @@ import { useState } from "react";
 import "./App.css"
 import Card from "./components/card/Card"
 import Navbar from "./components/navbar/Navbar"
+import {posts} from "./data"
 const App = () => {
   const [username, setUsername] = useState("")
   const [user, setUser] = useState("")
   
   console.log(user);
-  return <div className="container">
+  return ( <div className="container">
     {user ? (
       <>
         <Navbar/>
-        <Card/>
+        {posts.map((post) => (
+          <Card key={post.id} post={post} />
+        ))}
+        
         <span className="username">{username}</span>
       </>
     ) :(
@@ -22,8 +26,10 @@ const App = () => {
         onChange={(e) => setUsername(e.target.value)}/>
       <button onClick={() => setUser(username)}>login</button>
     </div>
+    
   )}
-  </div>;
+  </div>
+  )
 }
 
 export default App;
