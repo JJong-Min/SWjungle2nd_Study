@@ -1,0 +1,28 @@
+{
+    "config": {
+        "target": "http://127.0.0.1:5000",
+        "phases": [
+            {"duration": 20, "arrivalRate": 400}
+        ],
+
+        "defaults": {
+            "headers": {
+                "User-Agent": "Artillery"
+            }
+        }
+    },
+    "scenarios": [
+        {
+            "name": "유저테스트",
+            "flow": [
+                {"post":
+                    {
+                        "url": "/api/user/login",
+                        "json": {"email": "", "pwd": "" }
+                    }
+                }
+
+            ]
+        }
+    ]
+}
